@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # yeoman-admin-lte
 
 This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
@@ -12,8 +13,13 @@ Run `grunt` for building and `grunt serve` for preview.
 
 Running `grunt test` will run the unit tests with karma.
 =======
+=======
+>>>>>>> 7c68023a2a6f29d196a804649120475223959598
 # Yeoman-Angular-AdminLTE
 Config Yeoman + Angular and AdminLTE, this source is base structs, and null page.
 
 By DucPT
+<<<<<<< HEAD
+>>>>>>> 7c68023a2a6f29d196a804649120475223959598
+=======
 >>>>>>> 7c68023a2a6f29d196a804649120475223959598
