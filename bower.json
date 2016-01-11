@@ -10,15 +10,15 @@
     "angular-route": "^1.4.0",
     "angular-sanitize": "^1.4.0",
     "angular-touch": "^1.4.0",
-    "fastclick":"*",
-    "jquery.sparkline":"*",
-    "jvectormap":"*",
-    "slimScroll":"*",
-    "chartjs":"*",
-    "font-awesome":"*",
-    "ionicons":"*",
-    "adminlte":"*"
-
+    "fastclick": "*",
+    "jquery.sparkline": "*",
+    "jvectormap": "*",
+    "slimScroll": "*",
+    "chartjs": "*",
+    "font-awesome": "*",
+    "ionicons": "*",
+    "adminlte": "*",
+    "iCheck": "icheck#~1.0.2"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"
@@ -33,25 +33,31 @@
         "dist/js/bootstrap.js"
       ]
     },
-    "jvectormap":{
-      "main":[
+    "jvectormap": {
+      "main": [
         "jquery-jvectormap.css",
         "jquery-jvectormap.js"
       ]
     },
-    "adminlte":{
-      "main":[
+    "adminlte": {
+      "main": [
         "dist/js/app.js",
         "dist/css/AdminLTE.min.css",
         "dist/css/skins/_all-skins.css"
       ]
     },
-    "font-awesome":{
-      "main":"css/font-awesome.css"
+    "font-awesome": {
+      "main": "css/font-awesome.css"
     },
-    "slimScroll":{
-      "main":[
+    "slimScroll": {
+      "main": [
         "jquery.slimscroll.js"
+      ]
+    },
+    "iCheck":{
+      "main":[
+        "iCheck.js",
+        "skins/square/blue.css"
       ]
     }
   }
