@@ -1,0 +1,68 @@
+    <div class="container">
+        <h3>Table's Case</h3>
+        <div class="row">
+            <div class="col-md-3 input-group">
+                <span class="input-group-addon">Filter</span>
+                <input type="text" class="form-control" ng-model="nameFilter">
+            </div>
+            <div>
+                <label>Total result: {{(posts|filter:nameFilter).length}}</label>
+            </div>
+
+        </div>
+        <div class="container result">
+            <div class="row text-left">
+                <button class="btn btn-primary btn-xs" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+                    Previous
+                </button>
+                {{currentPage+1}}/{{numberOfPages((posts|filter:nameFilter).length)}}
+                <button class="btn btn-primary btn-xs" ng-disabled="currentPage >=(posts|filter:nameFilter).length/pageSize - 1" ng-click="currentPage=currentPage+1">
+                    Next
+                </button>
+            </div>
+            <table class="table table-bordered table-hover ">
+                <tr class="text-center">
+                    <th>No</th>
+                    <th><a href="" ng-click="orderKey='postId';reverse=!reverse">Post Id</a></th>
+                    <th><a href="" ng-click="orderKey='id';reverse=!reverse">Id</a></th>
+                    <th><a href="" ng-click="orderKey='name';reverse=!reverse">Title</a></th>
+                    <th><a href="" ng-click="orderKey='body';reverse=!reverse">Body</a></th>
+                    <th>#</th>
+                </tr>
+                <tr ng-repeat="post in posts |filter:nameFilter | orderBy:orderKey:reverse | startFrom:currentPage*pageSize | limitTo:pageSize" ng-click="getPost(post.id)" data-toggle="modal" data-target="#post-modal">
+                    <td>{{(currentPage+1)*($index+1)}}</td>
+                    <td>{{post.postId}}</td>
+                    <td>{{post.id}}</td>
+                    <td><span ng-bind-html="highlight(post.name,nameFilter)"></span></td>
+                    <td><span ng-bind-html="highlight(post.body,nameFilter)"></span></td>
+                    <td>
+                        <button ng-click="deletePost(post.id)" class="btn btn-primary btn-xs">Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Button trigger modal -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="post-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">{{getPost.data.name | uppercase}}</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="comment">{{getPost.data.email}} comment:</label>
+                        <textarea class="form-control" rows="10" ng-model="getPost.data.body"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" ng-click="updatePost(getPost.data.id)">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -2,18 +2,18 @@
 
 /**
  * @ngdoc function
- * @name yeomanAdminLteApp.controller:MainCtrl
+ * @name yeomanAdminLteApp.controller:TechnicalCtrl
  * @description
- * # MainCtrl
+ * # TechnicalCtrl
  * Controller of the yeomanAdminLteApp
  */
 angular.module('yeomanAdminLteApp')
-  .controller('MainCtrl', function ($rootScope) {
+  .controller('TechnicalCtrl', function ($rootScope) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-    $rootScope.moduleName ="Main";
-    $rootScope.moduleNameDetails ="This is the main view";
+    $rootScope.moduleName ="Technical";
+    $rootScope.moduleNameDetails ="This is the technical view";
   });
