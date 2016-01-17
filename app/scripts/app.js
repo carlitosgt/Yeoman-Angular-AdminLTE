@@ -35,6 +35,11 @@
     controller: 'NewsCtrl',
     controllerAs: 'news'
   })
+  .when('/profile', {
+    templateUrl: 'views/profile.html',
+    controller: 'ProfileCtrl',
+    controllerAs: 'profile'
+  })
   .otherwise({
     redirectTo: '/'
   });
