@@ -15,7 +15,8 @@
   'ngResource',
   'ngRoute',
   'ngSanitize',
-  'ngTouch'
+  'ngTouch',
+  'jkuri.gallery'
   ])
  .config(function ($routeProvider) {
   $routeProvider
