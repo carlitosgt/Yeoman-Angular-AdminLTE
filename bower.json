@@ -18,7 +18,9 @@
     "font-awesome": "*",
     "ionicons": "*",
     "adminlte": "*",
-    "iCheck": "icheck#~1.0.2"
+    "iCheck": "icheck#~1.0.2",
+    "google-fonts": "*",
+    "ngGallery":"*"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"
@@ -54,8 +56,8 @@
         "jquery.slimscroll.js"
       ]
     },
-    "iCheck":{
-      "main":[
+    "iCheck": {
+      "main": [
         "iCheck.js",
         "skins/square/blue.css"
       ]

@@ -403,13 +403,19 @@ module.exports = function (grunt) {
             cwd: 'bower_components/font-awesome', 
             src: ['fonts/*.*'],
             dest: '<%= yeoman.dist %>'
-        }]
+        },]
       },
       styles: {
         expand: true,
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      toServer: {
+        expand: true,
+        cwd: '<%= yeoman.dist %>',
+        dest: 'C:/nginx-1.9.4/html/yeoman',
+        src: '**'
       }
     },
 
@@ -463,8 +469,8 @@ module.exports = function (grunt) {
     'wiredep',
     'concurrent:test',
     'postcss',
-    'connect:test',
-    'karma'
+    'connect:test'
+    
   ]);
 
   grunt.registerTask('build', [
@@ -477,7 +483,7 @@ module.exports = function (grunt) {
     'concat',
     'ngAnnotate',
     'copy:dist',
-    'cdnify',
+     'cdnify',
     'cssmin',
     'uglify',
     'filerev',
