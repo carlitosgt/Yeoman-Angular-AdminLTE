@@ -19,7 +19,6 @@
     "ionicons": "*",
     "adminlte": "*",
     "iCheck": "icheck#~1.0.2",
-    "google-fonts": "*",
     "ngGallery":"*"
   },
   "devDependencies": {
