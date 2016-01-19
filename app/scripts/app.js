@@ -40,6 +40,21 @@
     controller: 'ProfileCtrl',
     controllerAs: 'profile'
   })
+  .when('/scada', {
+    templateUrl: 'views/scada.html',
+    controller: 'ScadaCtrl',
+    controllerAs: 'scada'
+  })
+  .when('/scada', {
+    templateUrl: 'views/scada.html',
+    controller: 'ScadaCtrl',
+    controllerAs: 'scada'
+  })
+  .when('/scada', {
+    templateUrl: 'views/scada.html',
+    controller: 'ScadaCtrl',
+    controllerAs: 'scada'
+  })
   .otherwise({
     redirectTo: '/'
   });
