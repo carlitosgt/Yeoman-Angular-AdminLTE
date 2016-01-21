@@ -6,7 +6,7 @@
     <a href="#/"><b>SCADA.One</b></a>
   </div><!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
+    <p class="login-box-msg">{{login_msg}}</p>
     <form ng-submit="loginScada()">
       <div class="form-group has-feedback">
         <input ng-model="scada_username" type="text" class="form-control" placeholder="Username">
@@ -27,9 +27,30 @@
 
   </div><!-- /.login-box-body -->
 </div>
-<div class="data" ng-show="islogin">
+<div class="data jumbotron" ng-show="islogin">
   <a href="" ng-click="getSubstations()">Get Substations</a>
-  <div>
-    {{listSubstations}}
+  <div class="container">
+<!--     <table class="table table-striped table-bordered">
+      <thead>
+        <tr class="info">
+          <th class="text-center" rowspan="2" width="4%">STT</th>
+          <th class="text-center" rowspan="2">Trạm biến áp</th>
+          <th class="text-center" rowspan="2" width="30%">Địa chỉ</th>
+          <th class="text-center" colspan="3" width="35%">Nhiệt độ cao nhất hiện tại</th>
+        </tr>
+      </thead>
+      <tbody ng-repeat="sub in listSubstations.data">
+        <tr>
+          <td class="text-right">{{$index+1}}</td>
+          <td>{{sub.subsName}}</td>
+          <td>{{sub.subsAddress}}</td>
+          <td>{{sub.bushing}}</td>
+        </tr>
+      </tbody>
+    </table> -->
+    <ul ng-repeat="sub in listSubstations">
+      <li>{{sub.subsId}}</li>
+    </ul>
   </div>
+
 </div>

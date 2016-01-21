@@ -1,0 +1,44 @@
+<section class="content">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="box box-solid">
+				<div class="box-header with-border">
+					<form ng-submit="searchBooks()">
+						<div class="input-group">
+							<input type="text" class="form-control" ng-model="key" placeholder="Search for...">
+							<span class="input-group-btn">
+							<button class="btn btn-default" type="submit">Tìm kiếm</button>
+							</span>
+						</div>
+					</form>
+				</div>
+				<!-- /.box-header -->
+				<!-- /.box-body -->
+			</div>
+			<!-- /.box -->
+		</div>
+		<!-- /.col (left) -->
+	</div>
+	<p>Total results: {{listResult.Total}}</p>
+	<div class="row">
+		<div class="col-md-6" ng-repeat="book in listResult.Books" style="cursor: pointer;">
+			<div class="box box-solid" ng-click="getDetailsBook({{book.ID}})">
+				<div class="box-header with-border">
+					<h3 class="box-title"><strong>{{book.Title}}</strong></h3>
+				</div>
+				<!-- /.box-header -->
+				<div class="box-body">
+					<div class="col-md-4">
+						<img ng-src="{{book.Image}}" width="83%" height="83%">
+					</div>
+					<div class="col-md-8">
+						<p><strong>{{book.SubTitle}}</strong></p>
+						<p class="text-justify">{{book.Description}}</p>
+					</div>
+				</div>
+				<!-- /.box-body -->
+			</div>
+			<!-- /.box -->
+		</div>
+	</div>
+</section>

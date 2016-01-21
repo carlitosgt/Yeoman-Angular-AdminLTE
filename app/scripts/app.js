@@ -55,6 +55,11 @@
     controller: 'ScadaCtrl',
     controllerAs: 'scada'
   })
+  .when('/ebook', {
+    templateUrl: 'views/ebook.html',
+    controller: 'EbookCtrl',
+    controllerAs: 'ebook'
+  })
   .otherwise({
     redirectTo: '/'
   });
