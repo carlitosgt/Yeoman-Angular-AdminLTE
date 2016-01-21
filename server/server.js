@@ -21,13 +21,14 @@ app.get('/news_api', function(req, res){
 	request(url, function(error, response, html){
 		var result=[];
 		if(!error){
-			var $ = cheerio.load(html);			
+			var $ = cheerio.load(html.replace(/\t/gi,'').replace(/\n/gi,''));			
 			$('.recentNews').each(function(i){
 				result.push({
-					"title":$('.recentNews div a').eq(i).text().replace(/\t/gi,'').replace(/\n/gi,''),
-					"author":$('.postedBy').eq(i).text().replace(/\t/gi,'').replace(/\n/gi,''),
-					"image":$('.newsText div a img').eq(i).attr('src'),
-					"data":$('div.newsText').eq(i).text().replace(/\t/gi,'').replace(/\n/gi,'')
+					"title":$(this).find($('.newsTitle')).text(),
+					"author":$(this).find($('.posted')).text(),
+					"content":$(this).find($('.newsText')).text(),
+					"image":$(this).find($('.bbCodeImage')).attr('src'),
+					"url":"https://tinhte.vn/"+$(this).find($('.internalLink')).attr('href')
 				});
 			});
 		}
