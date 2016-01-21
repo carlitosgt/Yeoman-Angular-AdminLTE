@@ -19,6 +19,7 @@
  	$scope.getDetailsBook=function(idBook){
  		$http.get("http://it-ebooks-api.info/v1/book/"+idBook).then(function(dataSubs) {
  			$scope.detailsBook = dataSubs.data;
+ 			$('#details_book').modal('show');
  		});
  	}
  });

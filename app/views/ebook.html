@@ -7,7 +7,7 @@
 						<div class="input-group">
 							<input type="text" class="form-control" ng-model="key" placeholder="Search for...">
 							<span class="input-group-btn">
-							<button class="btn btn-default" type="submit">Tìm kiếm</button>
+								<button class="btn btn-default" type="submit">Tìm kiếm</button>
 							</span>
 						</div>
 					</form>
@@ -21,15 +21,15 @@
 	</div>
 	<p>Total results: {{listResult.Total}}</p>
 	<div class="row">
-		<div class="col-md-6" ng-repeat="book in listResult.Books" style="cursor: pointer;">
-			<div class="box box-solid" ng-click="getDetailsBook({{book.ID}})">
+		<div class="col-md-6" ng-repeat="book in listResult.Books" >
+			<div class="box box-solid" >
 				<div class="box-header with-border">
-					<h3 class="box-title"><strong>{{book.Title}}</strong></h3>
+					<h3 class="box-title" style="cursor: pointer;" ng-click="getDetailsBook({{book.ID}})"><strong>{{book.Title}}</strong></h3>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
 					<div class="col-md-4">
-						<img ng-src="{{book.Image}}" width="83%" height="83%">
+						<img ng-src="{{book.Image}}" width="83%" height="83%"  style="cursor: pointer;" ng-click="getDetailsBook({{book.ID}})">
 					</div>
 					<div class="col-md-8">
 						<p><strong>{{book.SubTitle}}</strong></p>
@@ -42,3 +42,36 @@
 		</div>
 	</div>
 </section>
+<div id="details_book" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title"><strong>{{detailsBook.Title}}</strong></h4>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-4">
+						<img ng-src="{{detailsBook.Image}}" width="90%" height="90%" >
+					</div>
+					<div class="col-md-8">
+						<p class="text-bold"><code>Author:</code>{{detailsBook.Author}}</p>
+						<p class="text-bold"><code>Publisher:</code>{{detailsBook.Publisher}}</p>
+						<p class="text-bold"><code>ISBN:</code>{{detailsBook.ISBN}}</p>
+						<p class="text-bold"><code>Year:</code>{{detailsBook.Year}}</p>
+						<p class="text-bold"><code>Page:</code>{{detailsBook.Page}}</p>       			
+						<p class="text-bold"><code>Download:</code><a href="{{detailsBook.Download}}" target="_blank">{{detailsBook.Title}}</a></p>       			
+					</div>
+
+				</div>
+					<p class="text-justify"><code class="text-bold">Description:</code>{{detailsBook.Description}}</span></p>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
