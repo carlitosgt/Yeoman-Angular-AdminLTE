@@ -1,3 +1,4 @@
+<div class="ducpt margin">
 <div class="row">
 	<div class="col-md-3" ng-repeat="topic in newsData" height="500px">
 		
@@ -13,7 +14,7 @@
 				<a href="{{topic.url}}" target="_blank">
 					<img ng-src="{{topic.image}}"  class="img-responsive">
 				</a>
-				<p class="text-justify" style="font-size:larger">{{topic.content | limitTo:380}} ... <a href="{{topic.url}}" target="_blank"><code>Xem chi tiết</code></a></p>
+				<p class="text-justify" style="font-size:larger">{{topic.content}}<a href="{{topic.url}}" target="_blank"><code>Xem chi tiết</code></a></p>
 
 			</div>
 			<!-- /.box-body -->
@@ -22,4 +23,5 @@
 	</div>
 	<!-- /.col -->
 	
+</div>
 </div>

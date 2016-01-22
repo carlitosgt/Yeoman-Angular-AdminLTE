@@ -81,3 +81,27 @@ body {
     border-bottom: 0;
   }
 }
+
+
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+
+.ducpt > .row {
+ -moz-column-width: 20em;
+ -webkit-column-width: 20em;
+ -moz-column-gap: 4px;
+ -webkit-column-gap:4px; 
+  
+}
+
+.ducpt > .row > .col-md-3 {
+ display: inline-block;
+ padding: 0;
+ margin: 0;
+ width:  100%; 
+ float:none;
+}
+
+.ducpt > .img-responsive {
+  border:0px solid #999;
+}

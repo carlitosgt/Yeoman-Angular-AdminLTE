@@ -286,7 +286,7 @@
             <img src="images/adminlte/ducpt1012.jpg" class="img-circle" alt="User Image" width="160px" height="160px">
           </div>
           <div class="pull-left info">
-            <p>Duc Phan Thien</p>
+            <p>Duc Phan</p>
             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
           </div>
         </div>
@@ -302,8 +302,8 @@
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" ng-init="id=1">
-          <li ng-class="{'active':id==1}" ng-click="id=1"><a href="#/main"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-          <li ng-class="{'active':id==2}" ng-click="id=2"><a href="#/technical"><i class="fa fa-edit"></i> <span>Technical</span></a></li>
+          <li ng-class="{'active':id==1}" ng-click="id=1"><a href="#/main"><i class="fa fa-dashboard"></i> <span>Home</span></a></li>
+          <li ng-class="{'active':id==2}" ng-click="id=2"><a href="#/technical"><i class="fa fa-edit"></i> <span>Technicals</span></a></li>
           <li ng-class="{'active':id==3}" ng-click="id=3"><a href="#/news"><i class="fa fa-files-o"></i> <span>News</span></a></li>
           <li ng-class="{'active':id==7}" ng-click="id=7"><a href="#/scada"><i class="fa fa-share"></i> <span>Scada</span></a></li>
           <li ng-class="{'active':id==8}" ng-click="id=8"><a href="#/ebook"><i class="fa fa-share"></i> <span>Ebooks</span></a></li>
@@ -325,7 +325,7 @@
         </h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-          <li class="active">Dashboard</li>
+          <li class="active">{{moduleName}}</li>
         </ol>
       </section>
 

@@ -10,8 +10,8 @@
  angular.module('yeomanAdminLteApp')
  .controller('NewsCtrl', function ($rootScope,$scope, $http) {
  	$rootScope.moduleName ="News";
- 	$rootScope.moduleNameDetails ="This is the news view";
- 	$http.get("http://kynguyenxanh.net:8080/news_api")
+ 	$rootScope.moduleNameDetails ="Everything in the world";
+ 	 	$http.get("http://kynguyenxanh.net/news_api")
  	.success(function(data) {
  		$scope.newsData = data;
  	})

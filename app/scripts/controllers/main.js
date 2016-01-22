@@ -15,6 +15,6 @@
 	 	{thumb: '/images/adminlte/photo3.jpg', img: '/images/adminlte/photo3.jpg', description: 'Image 3'},
 	 	{thumb: '/images/adminlte/photo4.jpg', img: '/images/adminlte/photo4.jpg', description: 'Image 4'}
  	];
- 	$rootScope.moduleName ="Dashboard";
- 	$rootScope.moduleNameDetails ="This is the Dashboard view";
+ 	$rootScope.moduleName ="Home";
+ 	$rootScope.moduleNameDetails ="This is the Home view";
  });
