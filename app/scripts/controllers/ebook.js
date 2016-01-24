@@ -16,6 +16,11 @@
  			$scope.listResult = dataSubs.data;
  		});
  	}
+ 	$scope.lastUploadBooks=function(){
+ 		$http.get("http://localhost/api/news/it-ebooks").then(function(dataSubs) {
+ 			$scope.listLastUploadBooks = dataSubs.data;
+ 		});
+ 	}
  	$scope.getDetailsBook=function(idBook){
  		$http.get("http://it-ebooks-api.info/v1/book/"+idBook).then(function(dataSubs) {
  			$scope.detailsBook = dataSubs.data;

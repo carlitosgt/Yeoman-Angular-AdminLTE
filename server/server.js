@@ -9,35 +9,53 @@ app.get('/',function(req,res){
 	res.sendFile(path.join(__dirname+'/index.html'));
 });
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
+	res.header("Access-Control-Allow-Origin", "*");
+	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	next();
 });
-app.get('/news_api', function(req, res){
-
-	url = 'https://tinhte.vn';
-	var result, source;
-
-	request(url, function(error, response, html){
-		var result=[];
-		if(!error){
-			var $ = cheerio.load(html.replace(/\t/gi,'').replace(/\n/gi,''));			
-			$('.recentNews').each(function(i){
-				result.push({
-					"title":$(this).find($('.newsTitle')).text(),
-					"author":$(this).find($('.posted')).text(),
-					"content":$(this).find($('.newsText')).text(),
-					"image":$(this).find($('.bbCodeImage')).attr('src'),
-					"url":"https://tinhte.vn/"+$(this).find($('.internalLink')).attr('href')
+app.get('/api/news/:id', function(req, res){
+	var newsId = req.params.id;
+	var result =[];	
+	if(newsId=="tinhte"){		
+		url = 'https://tinhte.vn';		
+		request(url, function(error, response, html){
+			if(!error){
+				var $ = cheerio.load(html.replace(/\t/gi,'').replace(/\n/gi,''));			
+				$('.recentNews').each(function(i){
+					result.push({
+						"title":$(this).find($('.newsTitle')).text(),
+						"author":$(this).find($('.posted')).text(),
+						"content":$(this).find($('.newsText')).text(),
+						"image":$(this).find($('.bbCodeImage')).attr('src'),
+						"url":"https://tinhte.vn/"+$(this).find($('.internalLink')).attr('href')
+					});
 				});
-			});
-		}
+			}
+			res.send(JSON.stringify(result));
+		});
+	}else if(newsId=="it-ebooks"){
+		url = 'http://it-ebooks.info/';		
+		request(url, function(error, response, html){
+			if(!error){
+				var $ = cheerio.load(html.replace(/\t/gi,'').replace(/\n/gi,'').replace(/\r/gi,''));			
+				$('.top').eq(1).find('img').each(function(i){
+					result.push({
+						"title":$(this).attr('alt'),
+						"id":$(this).parent().attr('href').split('/')[2],
+						"img":"http://it-ebooks.info"+$(this).attr('src')
+					});
+				});
+			}
+			res.send(JSON.stringify(result));
+		});
+	}else{
 		res.send(JSON.stringify(result));
-	});
+	}
+	
 });
 
-app.listen('8080');
+app.listen('8111');
 
-console.log("Server on going 8080");
+console.log("Server on going 8111");
 
 exports = module.exports = app;
