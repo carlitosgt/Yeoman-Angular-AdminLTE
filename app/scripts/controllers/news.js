@@ -11,7 +11,7 @@
  .controller('NewsCtrl', function ($rootScope,$scope, $http) {
  	$rootScope.moduleName ="News";
  	$rootScope.moduleNameDetails ="Everything in the world";
- 	 	$http.get("http://kynguyenxanh.net/news_api")
+ 	 	$http.get("http://localhost/api/news/tinhte")
  	.success(function(data) {
  		$scope.newsData = data;
  	})
