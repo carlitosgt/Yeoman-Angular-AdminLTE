@@ -48,6 +48,25 @@ app.get('/api/news/:id', function(req, res){
 			}
 			res.send(JSON.stringify(result));
 		});
+	}else if(newsId=="movies"){
+		url = 'https://www.cgv.vn/vn/movies/now-showing.html';		
+		request(url, function(error, response, html){
+			if(!error){
+				var $ = cheerio.load(html.replace(/\t/gi,'').replace(/\n/gi,'').replace(/\r/gi,''));			
+				$('.products-grid').find('.item').each(function(i){
+					result.push({
+						"title":$(this).find('.product-name').text(),
+						"url":$(this).find('.product-name').find('a').attr('href'),
+						"img":$(this).find('.product-image').find('img').attr('src'),						
+						"genre":$(this).find('.movie-genre').find('.std').text(),
+						"rating":5,
+						"length":$(this).find('.product-image').attr('src'),
+						"release_date":$(this).find('.movie-release').find('.std').text()
+					});
+				});
+			}
+			res.send(JSON.stringify(result));
+		});
 	}else{
 		res.send(JSON.stringify(result));
 	}

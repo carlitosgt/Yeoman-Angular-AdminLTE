@@ -1,0 +1,19 @@
+<section class="content" ng-init="getMovies()">
+	<h2>Hot movies</h2>
+	<div class="row text-center">
+		<!-- <iframe width="560" height="315" autoplay=1 src="https://www.youtube.com/embed/6jk7LllgCl4?rel=0&amp;autoplay=1" frameborder="0" allowfullscreen></iframe> -->
+		<div class="col-md-3"  ng-repeat="film in newMovies" style="display: inline-block;float:none;column-width: 20em;column-gap: 4px;">
+			<div class="box box-solid" >				
+				<div class="box-body">
+					<a ng-href="{{film.url}}" target="_blank">
+						<p><img ng-src="{{film.img}}"  class="img-responsive"  style="cursor: pointer;display: initial !important;"></p>
+						<p><strong>{{film.title}}</strong></p>
+					</a>
+					<p>Thể loại: {{film.genre}}</p>
+					<p>Đánh giá: {{film.rating}}</p>
+					<p>Khởi chiếu: {{film.release_date}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

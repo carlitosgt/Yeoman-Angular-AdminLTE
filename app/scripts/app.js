@@ -60,6 +60,11 @@
     controller: 'EbookCtrl',
     controllerAs: 'ebook'
   })
+  .when('/film', {
+    templateUrl: 'views/film.html',
+    controller: 'FilmCtrl',
+    controllerAs: 'film'
+  })
   .otherwise({
     redirectTo: '/'
   });
