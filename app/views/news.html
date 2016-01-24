@@ -1,27 +1,21 @@
 <div class="ducpt margin">
-<div class="row">
-	<div class="col-md-3" ng-repeat="topic in newsData" height="500px">
-		
-		<div class="box box-solid">
-			<a href="{{topic.url}}" target="_blank">
-				<div class="box-header with-border">
-					<h3 class="box-title text-bold">{{topic.title}}</h3>
-					<h5>{{topic.author}}</h5>
-				</div>
-			</a>
-			<!-- /.box-header -->
-			<div class="box-body">
-				<a href="{{topic.url}}" target="_blank">
-					<img ng-src="{{topic.image}}"  class="img-responsive">
-				</a>
-				<p class="text-justify" style="font-size:larger">{{topic.content}}<a href="{{topic.url}}" target="_blank"><code>Xem chi tiết</code></a></p>
+	<div class="row">
+		<div class="col-md-3" ng-repeat="topic in newsData" height="500px">
 
-			</div>
-			<!-- /.box-body -->
-		</div>
-		<!-- /.box -->
+			<div class="box box-solid">
+				<a href="{{topic.url}}" target="_blank">
+					<div class="box-header with-border">
+						<h3 class="box-title text-bold">{{topic.title}}</h3>
+						<h5>{{topic.author}}</h5>
+					</div>
+				</a>
+				<div class="box-body">
+					<a href="{{topic.url}}" target="_blank">
+						<img ng-src="{{topic.image}}"  class="img-responsive">
+					</a>
+					<p class="text-justify" style="font-size:larger">{{topic.content}}<a href="{{topic.url}}" target="_blank"><code>Xem chi tiết</code></a></p>
+				</div>			
+			</div>		
+		</div>	
 	</div>
-	<!-- /.col -->
-	
-</div>
 </div>

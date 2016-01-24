@@ -17,7 +17,7 @@
  		});
  	}
  	$scope.lastUploadBooks=function(){
- 		$http.get("http://localhost/api/news/it-ebooks").then(function(dataSubs) {
+ 		$http.get("http://kynguyenxanh.net/api/news/it-ebooks").then(function(dataSubs) {
  			$scope.listLastUploadBooks = dataSubs.data;
  		});
  	}
