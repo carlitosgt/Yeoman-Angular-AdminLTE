@@ -15,7 +15,7 @@ app.use(function(req, res, next) {
 });
 app.get('/api/news/:id', function(req, res){
 	var newsId = req.params.id;
-	var result =[];
+	var result =[];	
 	if(newsId=="tinhte"){		
 		url = 'https://tinhte.vn';		
 		request(url, function(error, response, html){
@@ -33,8 +33,21 @@ app.get('/api/news/:id', function(req, res){
 			}
 			res.send(JSON.stringify(result));
 		});
-	}else if(newsId=="voz"){
-		res.send('Hello world');
+	}else if(newsId=="it-ebooks"){
+		url = 'http://it-ebooks.info/';		
+		request(url, function(error, response, html){
+			if(!error){
+				var $ = cheerio.load(html.replace(/\t/gi,'').replace(/\n/gi,'').replace(/\r/gi,''));			
+				$('.top').eq(1).find('img').each(function(i){
+					result.push({
+						"title":$(this).attr('alt'),
+						"id":$(this).parent().attr('href').split('/')[2],
+						"img":"http://it-ebooks.info"+$(this).attr('src')
+					});
+				});
+			}
+			res.send(JSON.stringify(result));
+		});
 	}else{
 		res.send(JSON.stringify(result));
 	}
