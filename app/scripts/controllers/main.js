@@ -12,9 +12,9 @@
  	$rootScope.moduleName ="Home";
  	$rootScope.moduleNameDetails ="This is the Home view";
  	$scope.images = [
-      {thumb: 'images/adminlte/tech-1.PNG', img: 'images/adminlte/tech-1.PNG'},
-          {thumb: 'images/adminlte/tech-2.PNG', img: 'images/adminlte/tech-2.PNG'},
-          {thumb: 'images/adminlte/tech-3.PNG', img: 'images/adminlte/tech-3.PNG'},
-          {thumb: 'images/adminlte/tech-4.PNG', img: 'images/adminlte/tech-4.PNG'}
+      {thumb: 'images/adminlte/tech-1.png', img: 'images/adminlte/tech-1.png'},
+          {thumb: 'images/adminlte/tech-2.png', img: 'images/adminlte/tech-2.png'},
+          {thumb: 'images/adminlte/tech-3.png', img: 'images/adminlte/tech-3.png'},
+          {thumb: 'images/adminlte/tech-4.png', img: 'images/adminlte/tech-4.png'}
     ];
  });
