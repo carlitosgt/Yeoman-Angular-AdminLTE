@@ -18,7 +18,7 @@
   'ngTouch',
   'jkuri.gallery'
   ])
- .config(function ($routeProvider) {
+ .config(function ($routeProvider,$locationProvider) {
   $routeProvider
   .when('/', {
     templateUrl: 'views/main.html',
@@ -68,4 +68,5 @@
   .otherwise({
     redirectTo: '/'
   });
+  $locationProvider.html5Mode(true);
 });

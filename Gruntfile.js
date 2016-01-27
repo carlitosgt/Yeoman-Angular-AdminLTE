@@ -491,6 +491,25 @@ module.exports = function (grunt) {
     'htmlmin'
   ]);
 
+   grunt.registerTask('build2', [
+    'clean:dist',
+    'wiredep',
+    'useminPrepare',
+    'concurrent:dist',
+    'postcss',
+    'ngtemplates',
+    'concat',
+    'ngAnnotate',
+    'copy:dist',
+     'cdnify',
+    'cssmin',
+    'uglify',
+    'filerev',
+    'usemin',
+    'htmlmin',
+    'copy:toServer'
+  ]);
+
   grunt.registerTask('default', [
     'newer:jshint',
     'newer:jscs',
