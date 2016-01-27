@@ -22,7 +22,10 @@
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/carousel.css">
   <!-- endbuild -->
-  <base href="/">
+  <!-- for grunt serve -->
+  <!-- <base href="/">  -->
+  <!-- for grunt build -->
+  <base href="/yeoman/"> 
 </head>
 <body ng-app="yeomanAdminLteApp" class="hold-transition skin-blue sidebar-mini">
 
@@ -304,15 +307,15 @@
         <!-- /.search form -->
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" ng-init="id=1">
-          <li ng-class="{'active':id==1}" ng-click="id=1"><a href="/main"><i class="fa fa-dashboard"></i> <span>Home</span></a></li>
-          <li ng-class="{'active':id==2}" ng-click="id=2"><a href="/technical"><i class="fa fa-edit"></i> <span>Technicals</span></a></li>
-          <li ng-class="{'active':id==3}" ng-click="id=3"><a href="/news"><i class="fa fa-files-o"></i> <span>News</span></a></li>
-          <li ng-class="{'active':id==7}" ng-click="id=7"><a href="/scada"><i class="fa  fa-desktop"></i> <span>Scada</span></a></li>
-          <li ng-class="{'active':id==8}" ng-click="id=8"><a href="/ebook"><i class="fa fa-book"></i> <span>Ebooks</span></a></li>
+          <li ng-class="{'active':id==1}" ng-click="id=1"><a href="main"><i class="fa fa-dashboard"></i> <span>Home</span></a></li>
+          <li ng-class="{'active':id==2}" ng-click="id=2"><a href="technical"><i class="fa fa-edit"></i> <span>Technicals</span></a></li>
+          <li ng-class="{'active':id==3}" ng-click="id=3"><a href="news"><i class="fa fa-files-o"></i> <span>News</span></a></li>
+          <li ng-class="{'active':id==7}" ng-click="id=7"><a href="scada"><i class="fa  fa-desktop"></i> <span>Scada</span></a></li>
+          <li ng-class="{'active':id==8}" ng-click="id=8"><a href="ebook"><i class="fa fa-book"></i> <span>Ebooks</span></a></li>
 <!--           <li ng-class="{'active':id==4}" ng-click="id=4"><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
           <li ng-class="{'active':id==5}" ng-click="id=5"><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li> -->
-          <li ng-class="{'active':id==9}" ng-click="id=9"><a href="/film"><i class="fa fa-file-movie-o"></i> <span>Film</span></a></li>
-          <li ng-class="{'active':id==6}" ng-click="id=6"><a href="/profile"><i class="fa fa-user-secret"></i> <span>Profile</span></a></li>
+          <li ng-class="{'active':id==9}" ng-click="id=9"><a href="film"><i class="fa fa-file-movie-o"></i> <span>Film</span></a></li>
+          <li ng-class="{'active':id==6}" ng-click="id=6"><a href="profile"><i class="fa fa-user-secret"></i> <span>Profile</span></a></li>
         </ul>
       </section>
       <!-- /.sidebar -->
