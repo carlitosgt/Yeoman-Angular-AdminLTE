@@ -12,7 +12,7 @@ angular.module('yeomanAdminLteApp')
   	$rootScope.moduleName ="Film";
  	$rootScope.moduleNameDetails ="This is the Film view";
     $scope.getMovies = function(){
- 		$http.get("http://kynguyenxanh.net/api/news/movies").then(function(dataSubs) {
+ 		$http.get("/api/news/movies").then(function(dataSubs) {
  			$scope.newMovies = dataSubs.data;
  		});
 
