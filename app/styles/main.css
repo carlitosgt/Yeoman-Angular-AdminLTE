@@ -19,13 +19,15 @@
 }
 
 .hgroup2 h1 {
-  font: 400 70px/1 "FaktSlabPro-Blond","FaktSlabPro-Light","Roboto Condensed",Arial,Helvetica,sans-serif;
+  font: 350 70px/1 "FaktSlabPro-Blond","FaktSlabPro-Light","Roboto Condensed",Arial,Helvetica,sans-serif;
 }
 
 .hgroup2 h2 {
-  font: 400 50px/1 "FaktSlabPro-Blond","FaktSlabPro-Light","Roboto Condensed",Arial,Helvetica,sans-serif;
+  font: 350 50px/1 "FaktSlabPro-Blond","FaktSlabPro-Light","Roboto Condensed",Arial,Helvetica,sans-serif;
 }
-
+.hgroup2 h3 {
+  font: 300 50px/1 "FaktSlabPro-Blond","FaktSlabPro-Light","Roboto Condensed",Arial,Helvetica,sans-serif;
+}
 .hgroup2 h2 span {
   color: #039be5;
 }
@@ -66,7 +68,7 @@
 .HomepageHeader h1 {
   margin-bottom: 15px;
   color: #fff;
-  font: 100px/1 "FaktSlabPro-Blond", Arial,Helvetica,sans-serif;
+  font: 65px/1 "FaktSlabPro-Blond", Arial,Helvetica,sans-serif;
 }
 .HomepageHeader h2 {
   color: #fff;
@@ -76,7 +78,7 @@
 .HomepageHeader-hgroup {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 75%;
   width: 100%;
   margin-left: -50%;
   height: 140px;
