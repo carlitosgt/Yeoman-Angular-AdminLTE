@@ -73,6 +73,22 @@ app.get('/api/news/:id', function(req, res){
 	
 });
 
+app.get('/api/getAlbumMp3',function(req,res){
+	var urlAlbum = req.param('urlAlbum');
+	var result =[];	
+	var url = "http://123nhaccuatui.com/Home/GetResultAsync2?Length=4&url="+urlAlbum;
+	request(url, function(error, response, html){
+			if(!error){
+				var $ = cheerio.load(html.replace(/\t/gi,'').replace(/\n/gi,''));			
+				$('#q128 a').each(function(i){
+					result.push({
+						"song":$(this).text()
+					});
+				});
+			}
+			res.send(JSON.stringify(result));
+		});
+});
 app.listen('8111');
 
 console.log("Server on going 8111");
