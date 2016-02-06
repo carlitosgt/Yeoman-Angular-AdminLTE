@@ -65,6 +65,11 @@
     controller: 'FilmCtrl',
     controllerAs: 'film'
   })
+  .when('/music', {
+    templateUrl: 'views/music.html',
+    controller: 'MusicCtrl',
+    controllerAs: 'music'
+  })
   .otherwise({
     redirectTo: '/'
   });
