@@ -7,11 +7,15 @@
  * # MusicCtrl
  * Controller of the yeomanAdminLteApp
  */
-angular.module('yeomanAdminLteApp')
-  .controller('MusicCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+ angular.module('yeomanAdminLteApp')
+ .controller('MusicCtrl', function () {
+ 	$scope.getAlbum = function() {
+ 		$http.get("/api/getAlbumMp3?urlAlbum=" + $scope.urlAlbum)
+ 		.success(function(data) {
+ 			$scope.lstSongs = data;
+ 		})
+ 		.error(function(data) {
+ 			console.log('avcd');
+ 		});
+ 	}
+ });
