@@ -8,7 +8,7 @@
  * Controller of the yeomanAdminLteApp
  */
  angular.module('yeomanAdminLteApp')
- .controller('MusicCtrl', function () {
+ .controller('MusicCtrl', function ( $scope,$http) {
  	$scope.getAlbum = function() {
  		$http.get("/api/getAlbumMp3?urlAlbum=" + $scope.urlAlbum)
  		.success(function(data) {
