@@ -89,6 +89,10 @@ app.get('/api/getAlbumMp3',function(req,res){
 			res.send(JSON.stringify(result));
 		});
 });
+
+app.get('/api/getCoffeePrice',function(req,res){
+	
+});
 app.listen('8111');
 
 console.log("Server on going 8111");
