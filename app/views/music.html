@@ -1,14 +1,16 @@
 <h3 class="text-center">Lấy link download ablum nhạc từ mp3.zing, nhaccuatui</h3>	
 <div class="row">
 	<div class="col-md-12" style="padding-top: 20px">
+		<form ng-submit="getAlbumForm.$valid && getAlbum()" name="getAlbumForm" novalidate>
 		<div class="form-group-lg">
-			<div class="input-group add-on">
-				<input type="text" class="form-control" ng-model="urlAlbum" placeholder="Link album, playlist, bài hát nhaccuatui hoặc zing mp3 vào đây" id="url" name="url" autocomplete="off">
+			<div class="input-group add-on" ng-class="{ 'has-error' : getAlbumForm.$invalid}">
+				<input type="text" class="form-control" ng-model="urlAlbum" placeholder="Link album, playlist, bài hát nhaccuatui hoặc zing mp3 vào đây" id="url" name="url" autocomplete="off" required>
 				<div class="input-group-btn">
-					<button ng-click="getAlbum()" class="btn btn-success btn-lg" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+					<button class="btn btn-success btn-lg" type="submit"><i class="glyphicon glyphicon-search"  ng-disabled="getAlbumForm.$invalid"></i></button>
 				</div>
 			</div>
 		</div>
+		</form>
 	</div>
 	<hr>
 	<div class="col-md-12" style="padding-top: 5px">
