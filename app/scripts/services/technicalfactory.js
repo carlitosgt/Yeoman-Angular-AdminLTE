@@ -7,17 +7,17 @@
  * # TechnicalFactory
  * Factory in the yeomanAdminLteApp.
  */
- angular.module('yeomanAdminLteApp')
- .factory('TechnicalFactory', function ($resource) {
-    // Service logic
-    // ...
+angular.module('yeomanAdminLteApp')
+    .factory('TechnicalFactory', function ($resource) {
+        // Service logic
+        // ...
 
-    var data = $resource('https://jsonplaceholder.typicode.com/comments/:id', {
-      id: '@id'
-    }, {
-      update: {
-        method: 'PUT'
-      }
+        var data = $resource('https://jsonplaceholder.typicode.com/comments/:id', {
+            id: '@id'
+        }, {
+            update: {
+                method: 'PUT'
+            }
+        });
+        return data;
     });
-    return data;
-  });
